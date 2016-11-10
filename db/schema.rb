@@ -11,37 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109213534) do
+ActiveRecord::Schema.define(version: 20161110032206) do
 
-  create_table "colors", force: true do |t|
-    t.string   "colorName"
-    t.string   "code"
+  create_table "colors", force: :cascade do |t|
+    t.string   "colorName",  limit: 255
+    t.string   "code",       limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "genetic_banks", force: true do |t|
-    t.string   "codeBreeder"
-    t.string   "breeder"
+  create_table "genetic_banks", force: :cascade do |t|
+    t.string   "codeBreeder",          limit: 255
+    t.string   "breeder",              limit: 255
     t.integer  "analysedYear"
-    t.string   "status"
-    t.string   "variety"
+    t.string   "status",               limit: 255
+    t.string   "variety",              limit: 255
     t.integer  "numPlants"
-    t.string   "picture"
     t.boolean  "scent"
     t.decimal  "headSize"
     t.integer  "petals"
-    t.string   "steamLength"
+    t.string   "steamLength",          limit: 255
     t.decimal  "production"
     t.decimal  "opening"
     t.text     "flowerAbnormality"
-    t.string   "sheets"
-    t.string   "hawthorn"
-    t.string   "father"
-    t.string   "mother"
+    t.string   "sheets",               limit: 255
+    t.string   "hawthorn",             limit: 255
+    t.string   "father",               limit: 255
+    t.string   "mother",               limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "color_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
   end
 
   add_index "genetic_banks", ["color_id"], name: "index_genetic_banks_on_color_id"
