@@ -1,0 +1,99 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Codebreeder:</strong>
+  <%= @genetic_bank.codeBreeder %>
+</p>
+
+<p>
+  <strong>Breeder:</strong>
+  <%= @genetic_bank.breeder %>
+</p>
+
+<p>
+  <strong>Analysedyear:</strong>
+  <%= @genetic_bank.analysedYear %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @genetic_bank.status %>
+</p>
+
+<p>
+  <strong>Variety:</strong>
+  <%= @genetic_bank.variety %>
+</p>
+
+<p>
+  <strong>Numplants:</strong>
+  <%= @genetic_bank.numPlants %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @genetic_bank.picture %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+    <%= @genetic_bank.color ? @genetic_bank.color.colorName : 'N/A'  %>
+</p>
+
+<p>
+  <strong>Scent:</strong>
+  <%= @genetic_bank.scent %>
+</p>
+
+<p>
+  <strong>Headsize:</strong>
+  <%= @genetic_bank.headSize %>
+</p>
+
+<p>
+  <strong>Petals:</strong>
+  <%= @genetic_bank.petals %>
+</p>
+
+<p>
+  <strong>Steamlength:</strong>
+  <%= @genetic_bank.steamLength %>
+</p>
+
+<p>
+  <strong>Production:</strong>
+  <%= @genetic_bank.production %>
+</p>
+
+<p>
+  <strong>Opening:</strong>
+  <%= @genetic_bank.opening %>
+</p>
+
+<p>
+  <strong>Flowerabnormality:</strong>
+  <%= @genetic_bank.flowerAbnormality %>
+</p>
+
+<p>
+  <strong>Sheets:</strong>
+  <%= @genetic_bank.sheets %>
+</p>
+
+<p>
+  <strong>Hawthorn:</strong>
+  <%= @genetic_bank.hawthorn %>
+</p>
+
+<p>
+  <strong>Father:</strong>
+  <%= @genetic_bank.father %>
+</p>
+
+<p>
+  <strong>Mother:</strong>
+  <%= @genetic_bank.mother %>
+</p>
+
+<%= link_to 'Edit', edit_genetic_bank_path(@genetic_bank) %> |
+<%= link_to 'Back', genetic_banks_path %>

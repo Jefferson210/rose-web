@@ -66,3 +66,5 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem "paperclip", "~> 5.0.0" #gema para la subida de imagenes
+

@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codeBreeder: MyString
+  breeder: MyString
+  analysedYear: 1
+  status: MyString
+  variety: MyString
+  numPlants: 1
+  picture: MyString
+  color: MyString
+  scent: false
+  headSize: 9.99
+  petals: 1
+  steamLength: MyString
+  production: 9.99
+  opening: 9.99
+  flowerAbnormality: MyText
+  sheets: MyString
+  hawthorn: MyString
+  father: MyString
+  mother: MyString
+
+two:
+  codeBreeder: MyString
+  breeder: MyString
+  analysedYear: 1
+  status: MyString
+  variety: MyString
+  numPlants: 1
+  picture: MyString
+  color: MyString
+  scent: false
+  headSize: 9.99
+  petals: 1
+  steamLength: MyString
+  production: 9.99
+  opening: 9.99
+  flowerAbnormality: MyText
+  sheets: MyString
+  hawthorn: MyString
+  father: MyString
+  mother: MyString

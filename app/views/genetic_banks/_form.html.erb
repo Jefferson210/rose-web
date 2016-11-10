@@ -1,0 +1,93 @@
+<%= form_for(@genetic_bank) do |f| %>
+<% if @genetic_bank.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@genetic_bank.errors.count, "error") %> prohibited this genetic_bank from being saved:</h2>
+
+    <ul>
+        <% @genetic_bank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :codeBreeder %><br>
+    <%= f.text_field :codeBreeder %>
+</div>
+<div class="field">
+    <%= f.label :breeder %><br>
+    <%= f.text_field :breeder %>
+</div>
+<div class="field">
+    <%= f.label :analysedYear %><br>
+    <%= f.number_field :analysedYear %>
+</div>
+<div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+</div>
+<div class="field">
+    <%= f.label :variety %><br>
+    <%= f.text_field :variety %>
+</div>
+<div class="field">
+    <%= f.label :numPlants %><br>
+    <%= f.number_field :numPlants %>
+</div>
+<div class="field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture %>
+</div>
+<div class="field">
+    <%= f.label :color %><br>
+    <%= f.collection_select(:color_id, @colors, :id, :colorName)%>
+</div>
+<div class="field">
+    <%= f.label :scent %><br>
+    <%= f.check_box :scent %>
+</div>
+<div class="field">
+    <%= f.label :headSize %><br>
+    <%= f.text_field :headSize %>
+</div>
+<div class="field">
+    <%= f.label :petals %><br>
+    <%= f.number_field :petals %>
+</div>
+<div class="field">
+    <%= f.label :steamLength %><br>
+    <%= f.text_field :steamLength %>
+</div>
+<div class="field">
+    <%= f.label :production %><br>
+    <%= f.text_field :production %>
+</div>
+<div class="field">
+    <%= f.label :opening %><br>
+    <%= f.text_field :opening %>
+</div>
+<div class="field">
+    <%= f.label :flowerAbnormality %><br>
+    <%= f.text_area :flowerAbnormality %>
+</div>
+<div class="field">
+    <%= f.label :sheets %><br>
+    <%= f.select :sheets, options_for_select([['Alto','alto'],['Bajo','bajo']],2),{prompt: "Seleccione"} %>
+
+</div>
+<div class="field">
+    <%= f.label :hawthorn %><br>
+    <%= f.select :hawthorn, options_for_select([['Alto','alto'],['Bajo','bajo'],['Ninguno','ninguno']],3), {prompt: "Seleccione"} %>
+</div>
+<div class="field">
+    <%= f.label :father %><br>
+    <%= f.select :father, options_for_select([['Malo','malo'],['Bueno','bueno']],2), {prompt: "Seleccione"} %>
+</div>
+<div class="field">
+    <%= f.label :mother %><br>
+    <%= f.select :mother, options_for_select([['Malo','malo'],['Bueno','bueno']],2), {prompt: "Seleccione"} %></div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>
