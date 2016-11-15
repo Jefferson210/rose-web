@@ -1,14 +1,20 @@
-<h1>Listing genetic_banks</h1>
+<%= stylesheet_link_tag "genetic_banks" %>
+<h1 class="alert alert-success text-center">Banco Genético</h1>
+<div class="text-center">
+    <%= link_to new_genetic_bank_path do %>
+    <span class="glyphicon glyphicon-file " data-toggle="tooltip" title="nuevo"></span>
+    <% end %>
+</div>
 
-<table>
+<table class="table table-hover text-center">
     <thead>
         <tr>
-            <th>Codebreeder</th>
+            <th>Code</th>
             <th>Breeder</th>
-            <th>Analysedyear</th>
+            <th>An.Year</th>
             <th>Status</th>
             <th>Variety</th>
-            <th>Numplants</th>
+            <th>#Plants</th>
             <th>Picture</th>
             <th>Color</th>
             <th>Scent</th>
@@ -17,19 +23,20 @@
             <th>Steamlength</th>
             <th>Production</th>
             <th>Opening</th>
-            <th>Flowerabnormality</th>
+            <th>Fl.Abnormality</th>
             <th>Sheets</th>
             <th>Hawthorn</th>
             <th>Remarks</th>
-            <th>RelationSHip</th>
+            <th>RelationShip</th>
             <th colspan="3"></th>
+
         </tr>
     </thead>
 
     <tbody>
         <% @genetic_banks.each do |genetic_bank| %>
         <tr>
-            <td><%= genetic_bank.codeBreeder %></td>
+            <td><%= link_to genetic_bank.codeBreeder,genetic_bank %></td>
             <td><%= genetic_bank.breeder %></td>
             <td><%= genetic_bank.analysedYear %></td>
             <td><%= genetic_bank.status %></td>
@@ -48,14 +55,17 @@
             <td><%= genetic_bank.hawthorn %></td>
             <td><%= (genetic_bank.remarks.empty? )  ? 'N/A' : genetic_bank.remarks%></td>
             <td><%= (genetic_bank.relationship.empty?) ? 'N/A' : genetic_bank.relationship %></td>
-            <td><%= link_to 'Show', genetic_bank %></td>
-            <td><%= link_to 'Edit', edit_genetic_bank_path(genetic_bank) %></td>
-            <td><%= link_to 'Destroy', genetic_bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <!--            <td>< link_to 'Show', genetic_bank %></td>-->
+            <td><%= link_to edit_genetic_bank_path(genetic_bank) do%>
+                <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
+                <% end %>
+            </td>
+            <td><%= link_to genetic_bank, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
+                <% end %>
+            </td>
         </tr>
         <% end %>
     </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Genetic bank', new_genetic_bank_path %>

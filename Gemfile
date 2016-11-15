@@ -69,3 +69,4 @@ gem 'spring',        group: :development
 
 gem "paperclip", "~> 5.0.0" #gema para la subida de imagenes
 
+gem 'bootstrap-sass', '~> 3.2.0' #bootstrap para rails
