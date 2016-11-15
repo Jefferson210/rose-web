@@ -1,59 +1,59 @@
 <h1>Listing genetic_banks</h1>
 
 <table>
-  <thead>
-    <tr>
-      <th>Codebreeder</th>
-      <th>Breeder</th>
-      <th>Analysedyear</th>
-      <th>Status</th>
-      <th>Variety</th>
-      <th>Numplants</th>
-      <th>Picture</th>
-      <th>Color</th>
-      <th>Scent</th>
-      <th>Headsize</th>
-      <th>Petals</th>
-      <th>Steamlength</th>
-      <th>Production</th>
-      <th>Opening</th>
-      <th>Flowerabnormality</th>
-      <th>Sheets</th>
-      <th>Hawthorn</th>
-      <th>Father</th>
-      <th>Mother</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+            <th>Codebreeder</th>
+            <th>Breeder</th>
+            <th>Analysedyear</th>
+            <th>Status</th>
+            <th>Variety</th>
+            <th>Numplants</th>
+            <th>Picture</th>
+            <th>Color</th>
+            <th>Scent</th>
+            <th>Headsize</th>
+            <th>Petals</th>
+            <th>Steamlength</th>
+            <th>Production</th>
+            <th>Opening</th>
+            <th>Flowerabnormality</th>
+            <th>Sheets</th>
+            <th>Hawthorn</th>
+            <th>Remarks</th>
+            <th>RelationSHip</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
 
-  <tbody>
-    <% @genetic_banks.each do |genetic_bank| %>
-      <tr>
-        <td><%= genetic_bank.codeBreeder %></td>
-        <td><%= genetic_bank.breeder %></td>
-        <td><%= genetic_bank.analysedYear %></td>
-        <td><%= genetic_bank.status %></td>
-        <td><%= genetic_bank.variety %></td>
-        <td><%= genetic_bank.numPlants %></td>
-          <td><%= genetic_bank.picture_file_name %></td>
-        <td><%= genetic_bank.color ? genetic_bank.color.colorName : 'N/A'  %></td>
-        <td><%= genetic_bank.scent %></td>
-        <td><%= genetic_bank.headSize %></td>
-        <td><%= genetic_bank.petals %></td>
-        <td><%= genetic_bank.steamLength %></td>
-        <td><%= genetic_bank.production %></td>
-        <td><%= genetic_bank.opening %></td>
-        <td><%= genetic_bank.flowerAbnormality %></td>
-        <td><%= genetic_bank.sheets %></td>
-        <td><%= genetic_bank.hawthorn %></td>
-        <td><%= genetic_bank.father %></td>
-        <td><%= genetic_bank.mother %></td>
-        <td><%= link_to 'Show', genetic_bank %></td>
-        <td><%= link_to 'Edit', edit_genetic_bank_path(genetic_bank) %></td>
-        <td><%= link_to 'Destroy', genetic_bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+    <tbody>
+        <% @genetic_banks.each do |genetic_bank| %>
+        <tr>
+            <td><%= genetic_bank.codeBreeder %></td>
+            <td><%= genetic_bank.breeder %></td>
+            <td><%= genetic_bank.analysedYear %></td>
+            <td><%= genetic_bank.status %></td>
+            <td><%= genetic_bank.variety %></td>
+            <td><%= genetic_bank.numPlants %></td>
+            <td><%= genetic_bank.picture_file_name %></td>
+            <td><%= genetic_bank.color ? genetic_bank.color.colorName : 'N/A'  %></td>
+            <td><%= genetic_bank.scent %></td>
+            <td><%= genetic_bank.headSize %></td>
+            <td><%= genetic_bank.petals %></td>
+            <td><%= genetic_bank.steamLength %></td>
+            <td><%= genetic_bank.production %></td>
+            <td><%= genetic_bank.opening %></td>
+            <td><%= genetic_bank.flowerAbnormality %></td>
+            <td><%= genetic_bank.sheets %></td>
+            <td><%= genetic_bank.hawthorn %></td>
+            <td><%= (genetic_bank.remarks.empty? )  ? 'N/A' : genetic_bank.remarks%></td>
+            <td><%= (genetic_bank.relationship.empty?) ? 'N/A' : genetic_bank.relationship %></td>
+            <td><%= link_to 'Show', genetic_bank %></td>
+            <td><%= link_to 'Edit', edit_genetic_bank_path(genetic_bank) %></td>
+            <td><%= link_to 'Destroy', genetic_bank, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br>

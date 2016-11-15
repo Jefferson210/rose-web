@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Crossing:</strong>
+    <%= @child.crossing ? @child.crossing.codeCrossing : 'N/A' %>
+</p>
+
+<p>
+  <strong>Numindividuals:</strong>
+  <%= @child.numIndividuals %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+    <%= @child.color ? @child.color.colorName : 'N/A' %>
+</p>
+
+<p>
+  <strong>Headsize:</strong>
+  <%= @child.headSize %>
+</p>
+
+<p>
+  <strong>Numflowering:</strong>
+  <%= @child.numFlowering %>
+</p>
+
+<p>
+  <strong>Numpetals:</strong>
+  <%= @child.numPetals %>
+</p>
+
+<p>
+  <strong>Form:</strong>
+  <%= @child.form %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+    <%= image_tag @child.image.url() %>
+</p>
+
+<%= link_to 'Edit', edit_child_path(@child) %> |
+<%= link_to 'Back', children_path %>

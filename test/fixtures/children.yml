@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  crossing_id: 
+  numIndividuals: 1
+  color_id: 
+  headSize: 9.99
+  numFlowering: 1
+  numPetals: 1
+  form: MyString
+  image: MyString
+
+two:
+  crossing_id: 
+  numIndividuals: 1
+  color_id: 
+  headSize: 9.99
+  numFlowering: 1
+  numPetals: 1
+  form: MyString
+  image: MyString

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  origin: MyString
+  numSeed: 1
+  weight: 9.99
+  week: 1
+  hydratation: false
+  calendar: 2016-11-14
+
+two:
+  origin: MyString
+  numSeed: 1
+  weight: 9.99
+  week: 1
+  hydratation: false
+  calendar: 2016-11-14

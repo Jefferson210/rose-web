@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  codeCrossing: MyString
+  numCrossing: 1
+  year: 1
+  week: 1
+  effective: MyString
+  percentageEffective: 9.99
+  dateHarvest: MyString
+
+two:
+  codeCrossing: MyString
+  numCrossing: 1
+  year: 1
+  week: 1
+  effective: MyString
+  percentageEffective: 9.99
+  dateHarvest: MyString

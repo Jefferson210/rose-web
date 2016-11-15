@@ -86,13 +86,13 @@
 </p>
 
 <p>
-  <strong>Father:</strong>
-  <%= @genetic_bank.father %>
+    <strong>Remarks:</strong>
+    <%= (@genetic_bank.remarks.empty? )  ? 'N/A' :  @genetic_bank.remarks %>
 </p>
 
 <p>
-  <strong>Mother:</strong>
-  <%= @genetic_bank.mother %>
+  <strong>RelationShip:</strong>
+    <%= (@genetic_bank.relationship.empty? ) ?  'N/A' : @genetic_bank.relationship %>
 </p>
 
 <%= link_to 'Edit', edit_genetic_bank_path(@genetic_bank) %> |

@@ -73,21 +73,21 @@
 </div>
 <div class="field">
     <%= f.label :sheets %><br>
-    <%= f.select :sheets, options_for_select([['Alto','alto'],['Bajo','bajo']],2),{prompt: "Seleccione"} %>
+    <%= f.select(:sheets, options_for_select([['Alto','alto'],['Bajo','bajo']], :selected => f.object.sheets), :prompt => "Seleccione")  %>
 
 </div>
 <div class="field">
     <%= f.label :hawthorn %><br>
-    <%= f.select :hawthorn, options_for_select([['Alto','alto'],['Bajo','bajo'],['Ninguno','ninguno']],3), {prompt: "Seleccione"} %>
+    <%= f.select(:hawthorn, options_for_select([['Alto','alto'],['Bajo','bajo'],['Ninguno','ninguno']], :selected => f.object.hawthorn), :prompt => "Seleccione")  %>
 </div>
 <div class="field">
-    <%= f.label :father %><br>
-    <%= f.select :father, options_for_select([['Malo','malo'],['Bueno','bueno']],2), {prompt: "Seleccione"} %>
+    <%= f.label :remarks %><br>
+    <%= f.text_area :remarks %>
 </div>
 <div class="field">
-    <%= f.label :mother %><br>
-    <%= f.select :mother, options_for_select([['Malo','malo'],['Bueno','bueno']],2), {prompt: "Seleccione"} %></div>
-<div class="actions">
-    <%= f.submit %>
-</div>
-<% end %>
+    <%= f.label :relationship %><br>
+    <%= f.select(:relationship, options_for_select([["Padre", "padre"], ["Madre", "madre"]], :selected => f.object.relationship),:prompt => "Seleccione") %>
+    <div class="actions">
+        <%= f.submit %>
+    </div>
+    <% end %>

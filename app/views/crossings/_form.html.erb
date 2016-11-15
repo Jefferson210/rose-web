@@ -1,0 +1,64 @@
+<%= javascript_include_tag "crossings" %>
+<%= form_for(@crossing, remote: true) do |f| %>
+<% if @crossing.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@crossing.errors.count, "error") %> prohibited this crossing from being saved:</h2>
+
+    <ul>
+        <% @crossing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :codeCrossing %><br>
+    <%= f.text_field :codeCrossing %>
+</div>
+<div class="field">
+    <%= f.label :numCrossing %><br>
+    <%= f.number_field :numCrossing %>
+</div>
+<div class="field">
+    <%= f.label :father %><br>
+    <%= f.collection_select(:father,@fathers, :breeder, :breeder,{prompt: "Select a Father"}, {id: "fatherId"} )%>
+</div>
+<!--
+<div class="field">
+    < f.label :fatherPicture %><br>
+    <div id="fatherPicture"></div>
+</div>
+-->
+<div class="field">
+    <%= f.label :mother %><br>
+    <%= f.collection_select(:mother,@mothers, :breeder, :breeder,{prompt: "Select a Mother"}, {id: "motherId"} )%>
+</div>
+<div class="field">
+    <%= f.label :year %><br>
+    <%= f.number_field :year %>
+</div>
+<div class="field">
+    <%= f.label :week %><br>
+    <%= f.number_field :week %>
+</div>
+<div class="field">
+    <%= f.label :effective %><br>
+    <%= f.select :effective, options_for_select([['Bueno','bueno'],['Malo','malo']],2),{prompt: "Seleccione"} %>
+</div>
+<div class="field">
+    <%= f.label :percentageEffective %><br>
+    <%= f.text_field :percentageEffective %>
+</div>
+<div class="field">
+    <%= f.label :numSeed%><br>
+    <%= f.text_field :numSeed%>
+</div>
+<div class="field">
+    <%= f.label :dateHarvest %><br>
+    <%= f.text_field :dateHarvest %>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>

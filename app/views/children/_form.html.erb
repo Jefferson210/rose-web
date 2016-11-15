@@ -1,0 +1,49 @@
+<%= form_for(@child) do |f| %>
+<% if @child.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h2>
+
+    <ul>
+        <% @child.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :crossing_id %><br>
+    <%= f.collection_select(:crossing_id, @crossings, :id, :codeCrossing) %>
+</div>
+<div class="field">
+    <%= f.label :numIndividuals %><br>
+    <%= f.number_field :numIndividuals %>
+</div>
+<div class="field">
+    <%= f.label :color_id %><br>
+    <%= f.collection_select(:color_id, @colors, :id, :colorName) %>
+</div>
+<div class="field">
+    <%= f.label :headSize %><br>
+    <%= f.text_field :headSize %>
+</div>
+<div class="field">
+    <%= f.label :numFlowering %><br>
+    <%= f.number_field :numFlowering %>
+</div>
+<div class="field">
+    <%= f.label :numPetals %><br>
+    <%= f.number_field :numPetals %>
+</div>
+<div class="field">
+    <%= f.label :form %><br>
+    <%= f.text_field :form %>
+</div>
+<div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @sowing.origin %>
+</p>
+
+<p>
+  <strong>Numseed:</strong>
+  <%= @sowing.numSeed %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @sowing.weight %>
+</p>
+
+<p>
+  <strong>Week:</strong>
+  <%= @sowing.week %>
+</p>
+
+<p>
+  <strong>Hydratation:</strong>
+  <%= @sowing.hydratation %>
+</p>
+
+<p>
+  <strong>Calendar:</strong>
+  <%= @sowing.calendar %>
+</p>
+
+<%= link_to 'Edit', edit_sowing_path(@sowing) %> |
+<%= link_to 'Back', sowings_path %>

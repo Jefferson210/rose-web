@@ -1,0 +1,41 @@
+<%= form_for(@sowing) do |f| %>
+<% if @sowing.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@sowing.errors.count, "error") %> prohibited this sowing from being saved:</h2>
+
+    <ul>
+        <% @sowing.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :origin %><br>
+    <%= f.select(:origin, options_for_select([['Lazo','lazo'],['Tabacundo','tabacundo'],['Cayambe','cayambe']], :selected => f.object.origin), :prompt => "Seleccione") %>
+</div>
+<div class="field">
+    <%= f.label :numSeed %><br>
+    <%= f.number_field :numSeed %>
+</div>
+<div class="field">
+    <%= f.label :weight %><br>
+    <%= f.text_field :weight %>
+</div>
+<div class="field">
+    <%= f.label :week %><br>
+    <%= f.number_field :week %>
+</div>
+<div class="field">
+    <%= f.label :hydratation %><br>
+    <%= f.check_box :hydratation %>
+</div>
+<div class="field">
+    <%= f.label :calendar %><br>
+    <%= f.date_select :calendar %>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>
