@@ -1,14 +1,26 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panle-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Color Name
+                        <span><strong> <%= @color.colorName %></strong></span>
+                    </li>
 
-<p>
-  <strong>Colorname:</strong>
-  <%= @color.colorName %>
-</p>
+                    <li class="list-group-item">Code:
+                        <span><strong><%= @color.code %></strong></span>
+                    </li>
+                </ul>
+            </div>
 
-<p>
-  <strong>Code:</strong>
-  <%= @color.code %>
-</p>
+            <div class="panel-footer">
+                <%= link_to 'Edit', edit_color_path(@color) %> |
+                <%= link_to 'Back', colors_path %>
+            </div>
+        </div>
+    </div>
+</div>
 
-<%= link_to 'Edit', edit_color_path(@color) %> |
-<%= link_to 'Back', colors_path %>
+
+

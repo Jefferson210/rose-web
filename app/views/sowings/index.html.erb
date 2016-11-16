@@ -1,37 +1,51 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Sowings</h1>
+<h1 class="alert alert-success text-center">Sowings</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Origin</th>
-      <th>Numseed</th>
-      <th>Weight</th>
-      <th>Week</th>
-      <th>Hydratation</th>
-      <th>Calendar</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @sowings.each do |sowing| %>
-      <tr>
-        <td><%= sowing.origin %></td>
-        <td><%= sowing.numSeed %></td>
-        <td><%= sowing.weight %></td>
-        <td><%= sowing.week %></td>
-        <td><%= sowing.hydratation %></td>
-        <td><%= sowing.calendar %></td>
-        <td><%= link_to 'Show', sowing %></td>
-        <td><%= link_to 'Edit', edit_sowing_path(sowing) %></td>
-        <td><%= link_to 'Destroy', sowing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="text-center">
+    <%= link_to new_sowing_path do %>
+    <span class="glyphicon glyphicon-file " data-toggle="tooltip" title="nuevo"></span>
     <% end %>
-  </tbody>
+</div>
+
+<table class="table table-hover text-center">
+    <thead>
+        <tr>
+            <th>Origin</th>
+            <th>Numseed</th>
+            <th>Weight</th>
+            <th>Week</th>
+            <th>Hydratation</th>
+            <th>Calendar</th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @sowings.each do |sowing| %>
+        <tr>
+            <td><%= sowing.origin %></td>
+            <td><%= sowing.numSeed %></td>
+            <td><%= sowing.weight %></td>
+            <td><%= sowing.week %></td>
+            <td><%= sowing.hydratation %></td>
+            <td><%= sowing.calendar %></td>
+            <td><%= link_to sowing do%>
+                <span class="glyphicon glyphicon-eye-open" data-toggle="tooltip" title="ver"></span>
+                <%end%>
+            </td>
+            <td><%= link_to edit_sowing_path(sowing) do%>
+                <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
+                <%end%>
+            </td>
+            <td><%= link_to sowing, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
+                <%end%>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Sowing', new_sowing_path %>

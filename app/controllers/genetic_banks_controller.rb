@@ -1,6 +1,6 @@
 class GeneticBanksController < ApplicationController
     before_action :set_genetic_bank, only: [:show, :edit, :update, :destroy]
-    before_action :prepareColors, only: [:new, :edit]
+#    before_action :prepareColors, only: [:new, :edit]
 
     # GET /genetic_banks
     # GET /genetic_banks.json
@@ -73,9 +73,9 @@ class GeneticBanksController < ApplicationController
         params.require(:genetic_bank).permit(:codeBreeder, :breeder, :analysedYear, :status, :variety, :numPlants, :picture, :color_id, :scent, :headSize, :petals, :steamLength, :production, :opening, :flowerAbnormality, :sheets, :hawthorn, :remarks, :relationship)
     end
 
-    def prepareColors
-        @colors=Color.all
-    end
+#    def prepareColors
+#        @colors = Color.all
+#    end
 
     def search
         @picture = GeneticBank.find(params[:id])

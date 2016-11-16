@@ -1,55 +1,64 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="text-left"><%= @crossing.codeCrossing %></h2>
+            </div>
 
-<p>
-    <strong>Codecrossing:</strong>
-    <%= @crossing.codeCrossing %>
-</p>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">CodeCrossing:
+                        <span><strong><%= @crossing.codeCrossing %></strong></span>
+                    </li>
+                    <li class="list-group-item">Numcrossing:
+                        <span><strong><%= @crossing.numCrossing %></strong></span></li>
+                    <li class="list-group-item">Father:
+                        <span><strong><%= @crossing.father %></strong></span>
+                    </li>
 
-<p>
-    <strong>Numcrossing:</strong>
-    <%= @crossing.numCrossing %>
-</p>
+                    <li class="list-group-item">Mother:
+                        <span><strong> <%= @crossing.mother %></strong></span>
+                    </li>
 
-<p>
-    <strong>Father:</strong>
-    <%= @crossing.father %>
-</p>
+                    <li class="list-group-item">Year:
+                        <span><strong><%= @crossing.year %></strong></span> 
+                    </li>
 
-<p>
-    <strong>Mother:</strong>
-    <%= @crossing.mother %>
-</p>
+                    <li class="list-group-item">Week:
+                        <span><strong><%= @crossing.week %></strong></span> 
+                    </li>
+
+                    <li class="list-group-item">Effective:
+                        <span><strong><%= @crossing.effective %></strong></span> 
+                    </li>
+
+                    <li class="list-group-item">% Effective:
+                        <span><strong><%= @crossing.percentageEffective %></strong></span>  
+                    </li>
+
+                    <li class="list-group-item">NumSeed
+                        <span><strong><%= @crossing.numSeed %></strong></span> 
+                    </li>
+
+                    <li class="list-group-item">Date Harvest:
+                        <span><strong><%= @crossing.dateHarvest %></strong></span> 
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="panel-footer">
+                <%= link_to edit_crossing_path(@crossing) do%>
+                <span class="glyphicon glyphicon-edit" title="editar"></span>
+                <%end%>
+                <%= link_to crossings_path do%>
+                <span class="glyphicon glyphicon-arrow-left no-hover" title="atras" ></span>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-<p>
-    <strong>Year:</strong>
-    <%= @crossing.year %>
-</p>
 
-<p>
-    <strong>Week:</strong>
-    <%= @crossing.week %>
-</p>
-
-<p>
-    <strong>Effective:</strong>
-    <%= @crossing.effective %>
-</p>
-
-<p>
-    <strong>Percentageeffective:</strong>
-    <%= @crossing.percentageEffective %>
-</p>
-
-<p>
-    <strong>Percentageeffective:</strong>
-    <%= @crossing.numSeed %>
-</p>
-
-<p>
-    <strong>Dateharvest:</strong>
-    <%= @crossing.dateHarvest %>
-</p>
-
-<%= link_to 'Edit', edit_crossing_path(@crossing) %> |
-<%= link_to 'Back', crossings_path %>

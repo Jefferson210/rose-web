@@ -1,0 +1,12 @@
+<% if @genetic_bank.errors.any? %>
+<div id="error_explanation">
+    <div class="alert alert-danger">
+        EL formulario contiene <%= pluralize(@genetic_bank.errors.count, "error") %>
+    </div>                
+    <ul>
+        <% @genetic_bank.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>

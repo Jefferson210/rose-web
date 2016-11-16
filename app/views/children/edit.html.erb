@@ -1,6 +1,18 @@
 <h1>Editing Child</h1>
 
 <%= render 'form' %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <%= link_to @child do%>
+            <span class="glyphicon glyphicon-eye-open" title="ver" ></span>
+            <% end %>
+            <%= link_to children_path do%>
+            <span class="glyphicon glyphicon-arrow-left no-hover" title="atras"></span>
+            <% end %>
+        </div>
+    </div>
+</div>
 
-<%= link_to 'Show', @child %> |
-<%= link_to 'Back', children_path %>
+
+

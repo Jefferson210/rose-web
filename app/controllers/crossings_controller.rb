@@ -1,6 +1,6 @@
 class CrossingsController < ApplicationController
     before_action :set_crossing, only: [:show, :edit, :update, :destroy]
-    before_action :prepareParents, only: [:new, :edit]
+#    before_action :prepareParents, only: [:new, :edit]
 
     # GET /crossings
     # GET /crossings.json
@@ -73,8 +73,8 @@ class CrossingsController < ApplicationController
         params.require(:crossing).permit(:codeCrossing, :numCrossing, :year, :week, :effective, :percentageEffective, :dateHarvest, :numSeed, :father, :fatherPicture, :mother, :motherPicture)
     end
 
-    def prepareParents 
-        @fathers = GeneticBank.where(relationship: 'padre')
-        @mothers = GeneticBank.where(relationship: 'madre')
-    end
+#    def prepareParents 
+#        @fathers = GeneticBank.where(relationship: 'padre')
+#        @mothers = GeneticBank.where(relationship: 'madre')
+#    end
 end

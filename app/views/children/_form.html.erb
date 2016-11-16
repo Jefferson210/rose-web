@@ -1,49 +1,74 @@
-<%= form_for(@child) do |f| %>
-<% if @child.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(@child.errors.count, "error") %> prohibited this child from being saved:</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-offset-1 col-md-10">
+            <%= form_for(@child,:html=>{:class=>"form-horizontal"}) do |f| %>
+            <% if @child.errors.any?%>
+            <div id="error_explanation">
+                <div class="alert alert-danger">
+                    EL formulario contiene <%= pluralize(@child.errors.count, "error") %>
+                </div>                
+                <ul>
+                    <% @child.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
 
-    <ul>
-        <% @child.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
+            <div class="form-group">
+                <%= f.label :crossing_id, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.collection_select(:crossing_id,Crossing.all, :id, :codeCrossing,{:prompt=>"Seleccione"},{:class=>"form-control"}) %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :numIndividuals , :class=>"col-md-2 control-label"%>
+                <div class="col-md-3">
+                    <%= f.number_field :numIndividuals,:class=>'form-control' %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :color_id, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.collection_select(:color_id, Color.all, :id, :colorName,{:prompt=>"Seleccione"},{:class=>"form-control"}) %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :headSize, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.text_field :headSize,:class=>'form-control' %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :numFlowering, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.number_field :numFlowering,:class=>'form-control' %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :numPetals, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.number_field :numPetals ,:class=>'form-control'%>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :form , :class=>"col-md-2 control-label"%>
+                <div class="col-md-3">
+                    <%= f.text_field :form,:class=>'form-control' %>
+                </div>
+            </div>
+            <div class="form-group">
+                <%= f.label :image, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.file_field :image ,:class=>'form-control'%>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="actions">
+                    <%= f.submit :class=>"btn btn-primary"%>
+                </div>
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
-<% end %>
-
-<div class="field">
-    <%= f.label :crossing_id %><br>
-    <%= f.collection_select(:crossing_id, @crossings, :id, :codeCrossing) %>
-</div>
-<div class="field">
-    <%= f.label :numIndividuals %><br>
-    <%= f.number_field :numIndividuals %>
-</div>
-<div class="field">
-    <%= f.label :color_id %><br>
-    <%= f.collection_select(:color_id, @colors, :id, :colorName) %>
-</div>
-<div class="field">
-    <%= f.label :headSize %><br>
-    <%= f.text_field :headSize %>
-</div>
-<div class="field">
-    <%= f.label :numFlowering %><br>
-    <%= f.number_field :numFlowering %>
-</div>
-<div class="field">
-    <%= f.label :numPetals %><br>
-    <%= f.number_field :numPetals %>
-</div>
-<div class="field">
-    <%= f.label :form %><br>
-    <%= f.text_field :form %>
-</div>
-<div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-</div>
-<div class="actions">
-    <%= f.submit %>
-</div>
-<% end %>

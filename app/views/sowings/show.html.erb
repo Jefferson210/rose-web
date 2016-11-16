@@ -1,34 +1,53 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+<!--
+            <div class="panel-heading">
 
-<p>
-  <strong>Origin:</strong>
-  <%= @sowing.origin %>
-</p>
+            </div>
+-->
 
-<p>
-  <strong>Numseed:</strong>
-  <%= @sowing.numSeed %>
-</p>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item">Origin:
+                        <span><strong><%= @sowing.origin %></strong></span>  
+                    </li>
 
-<p>
-  <strong>Weight:</strong>
-  <%= @sowing.weight %>
-</p>
+                    <li class="list-group-item">NumSeed:
+                        <span><strong> <%= @sowing.numSeed %></strong></span>  
+                    </li>
 
-<p>
-  <strong>Week:</strong>
-  <%= @sowing.week %>
-</p>
+                    <li class="list-group-item">Weight:
+                        <span><strong> <%= @sowing.weight %></strong></span>  
+                    </li>
 
-<p>
-  <strong>Hydratation:</strong>
-  <%= @sowing.hydratation %>
-</p>
+                    <li class="list-group-item">Week:
+                        <span><strong> <%= @sowing.week %></strong></span>  
+                    </li>
 
-<p>
-  <strong>Calendar:</strong>
-  <%= @sowing.calendar %>
-</p>
+                    <li class="list-group-item">Hydratation:
+                        <span><strong><%= @sowing.hydratation %></strong></span>  
+                    </li>
 
-<%= link_to 'Edit', edit_sowing_path(@sowing) %> |
-<%= link_to 'Back', sowings_path %>
+                    <li class="list-group-item">Calendar:
+                        <span><strong><%= @sowing.calendar %></strong></span>  
+                    </li>
+                </ul>
+            </div>
+
+            <div class="panel-footer">
+                <%= link_to edit_sowing_path(@sowing) do%>
+                <span class="glyphicon glyphicon-edit" title="editar"></span>
+                <%end%>
+                <%= link_to sowings_path do%>
+                <span class="glyphicon glyphicon-arrow-left no-hover" title="atras" ></span>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

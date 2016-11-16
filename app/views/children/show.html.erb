@@ -1,44 +1,61 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="text-left"><%= @child.crossing ? @child.crossing.codeCrossing : 'N/A' %></h2>
+            </div>
 
-<p>
-  <strong>Crossing:</strong>
-    <%= @child.crossing ? @child.crossing.codeCrossing : 'N/A' %>
-</p>
+            <div class="panel-body">
+                <div class="image-rose">
+                    <center>
+                        <%= image_tag @child.image.url() %>
+                    </center>
+                </div>
+                <br>
+                <ul class="list-group">
+                    <li class="list-group-item">Code Crossing:
+                        <span><strong><%= @child.crossing ? @child.crossing.codeCrossing : 'N/A' %></strong></span>
+                    </li>
 
-<p>
-  <strong>Numindividuals:</strong>
-  <%= @child.numIndividuals %>
-</p>
+                    <li class="list-group-item">Num Individuals:
+                        <span><strong><%= @child.numIndividuals %></strong></span>
+                    </li>
 
-<p>
-  <strong>Color:</strong>
-    <%= @child.color ? @child.color.colorName : 'N/A' %>
-</p>
+                    <li class="list-group-item">Color:
+                        <span><strong><%= @child.color ? @child.color.colorName : 'N/A' %></strong></span>
+                    </li>
 
-<p>
-  <strong>Headsize:</strong>
-  <%= @child.headSize %>
-</p>
+                    <li class="list-group-item">Head Size:
+                        <span><strong><%= @child.headSize %></strong></span>
+                    </li>
 
-<p>
-  <strong>Numflowering:</strong>
-  <%= @child.numFlowering %>
-</p>
+                    <li class="list-group-item">Num Flowering:
+                        <span><strong><%= @child.numFlowering %></strong></span>
+                    </li>
 
-<p>
-  <strong>Numpetals:</strong>
-  <%= @child.numPetals %>
-</p>
+                    <li class="list-group-item">Num Petals:
+                        <span><strong><%= @child.numPetals %></strong></span>
+                    </li>
 
-<p>
-  <strong>Form:</strong>
-  <%= @child.form %>
-</p>
+                    <li class="list-group-item">Form:
+                        <span><strong><%= @child.form %></strong></span>
+                    </li>
+                </ul>
+            </div>
 
-<p>
-  <strong>Image:</strong>
-    <%= image_tag @child.image.url() %>
-</p>
+            <div class="panel-footer">
+                <%= link_to edit_child_path(@child) do%> 
+                <span class="glyphicon glyphicon-edit" title="editar"></span>
+                <%end%>
+                <%= link_to children_path do%>
+                <span class="glyphicon glyphicon-arrow-left no-hover" title="atras" ></span>
+                <%end%>
+            </div>
+        </div>
+    </div>
+</div>
 
-<%= link_to 'Edit', edit_child_path(@child) %> |
-<%= link_to 'Back', children_path %>
+
+
+

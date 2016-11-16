@@ -1,41 +1,68 @@
-<%= form_for(@sowing) do |f| %>
-<% if @sowing.errors.any? %>
-<div id="error_explanation">
-    <h2><%= pluralize(@sowing.errors.count, "error") %> prohibited this sowing from being saved:</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+            <%= form_for(@sowing,:html=>{:class=>"form-horizontal"}) do |f| %>
+            <% if @sowing.errors.any?%>
+            <div id="error_explanation">
+                <div class="alert alert-danger">
+                    EL formulario contiene <%= pluralize(@sowing.errors.count, "error") %>
+                </div>                
+                <ul>
+                    <% @sowing.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                    <% end %>
+                </ul>
+            </div>
+            <% end %>
 
-    <ul>
-        <% @sowing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-        <% end %>
-    </ul>
-</div>
-<% end %>
+            <div class="form-group">
+                <%= f.label :origin, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.select(:origin, options_for_select([['Lazo','lazo'],['Tabacundo','tabacundo'],['Cayambe','cayambe']], :selected => f.object.origin), {:prompt => "Seleccione"}, {:class => 'form-control'}) %>
+                </div>
+            </div>
 
-<div class="field">
-    <%= f.label :origin %><br>
-    <%= f.select(:origin, options_for_select([['Lazo','lazo'],['Tabacundo','tabacundo'],['Cayambe','cayambe']], :selected => f.object.origin), :prompt => "Seleccione") %>
+            <div class="form-group">
+                <%= f.label :numSeed, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.number_field :numSeed,:class=>'form-control' %>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :weight, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.text_field :weight,:class=>'form-control' %>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :week, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.number_field :week,:class=>'form-control' %>                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :hydratation, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.check_box :hydratation ,:class=>'form-control'%>                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <%= f.label :calendar, :class=>"col-md-2 control-label" %>
+                <div class="col-md-3">
+                    <%= f.date_field :calendar,:class=>'form-control', :value=>f.object.calendar %>                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3 actions">
+                    <%= f.submit :class=>"btn btn-primary"%>
+                </div>    
+            </div>
+            <% end %>
+        </div>
+    </div>
 </div>
-<div class="field">
-    <%= f.label :numSeed %><br>
-    <%= f.number_field :numSeed %>
-</div>
-<div class="field">
-    <%= f.label :weight %><br>
-    <%= f.text_field :weight %>
-</div>
-<div class="field">
-    <%= f.label :week %><br>
-    <%= f.number_field :week %>
-</div>
-<div class="field">
-    <%= f.label :hydratation %><br>
-    <%= f.check_box :hydratation %>
-</div>
-<div class="field">
-    <%= f.label :calendar %><br>
-    <%= f.date_select :calendar %>
-</div>
-<div class="actions">
-    <%= f.submit %>
-</div>
-<% end %>

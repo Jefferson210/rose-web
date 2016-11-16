@@ -1,7 +1,7 @@
 class ChildrenController < ApplicationController
     before_action :set_child, only: [:show, :edit, :update, :destroy]
-    before_action :prepareColors, only: [:new, :edit]
-    before_action :prepareCrossings, only: [:new, :edit]
+#    before_action :prepareColors, only: [:new, :edit]
+#    before_action :prepareCrossings, only: [:new, :edit]
 
     # GET /children
     # GET /children.json
@@ -74,13 +74,13 @@ class ChildrenController < ApplicationController
         params.require(:child).permit(:crossing_id, :numIndividuals, :color_id, :headSize, :numFlowering, :numPetals, :form, :image)
     end
 
-    def prepareColors
-        @colors = Color.all
-    end
-
-    def prepareCrossings
-        @crossings = Crossing.all
-    end
+#    def prepareColors
+#        @colors = Color.all
+#    end
+#
+#    def prepareCrossings
+#        @crossings = Crossing.all
+#    end
 
 
 end

@@ -2,5 +2,15 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @sowing %> |
-<%= link_to 'Back', sowings_path %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <%= link_to @sowing do%>
+            <span class="glyphicon glyphicon-eye-open" title="ver" ></span>
+            <% end %>
+            <%= link_to sowings_path do%>
+            <span class="glyphicon glyphicon-arrow-left no-hover" title="atras"></span>
+            <% end %>
+        </div>
+    </div>
+</div>

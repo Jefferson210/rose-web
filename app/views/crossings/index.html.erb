@@ -1,8 +1,15 @@
+<%= stylesheet_link_tag "crossings" %>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Crossings</h1>
+<h1 class="alert alert-success text-center">Crossings</h1>
 
-<table>
+<div class="text-center">
+    <%= link_to new_crossing_path do%>
+    <span class="glyphicon glyphicon-file " data-toggle="tooltip" title="nuevo"></span>
+    <%end%>
+</div>
+
+<table class="table table-hover">
     <thead>
         <tr>
             <th>Codecrossing</th>
@@ -10,7 +17,7 @@
             <th>Year</th>
             <th>Week</th>
             <th>Effective</th>
-            <th>Percentageeffective</th>
+            <th>%effective</th>
             <th>NumSeed</th>
             <th>Father</th>
             <th>Mother</th>
@@ -22,7 +29,7 @@
     <tbody>
         <% @crossings.each do |crossing| %>
         <tr>
-            <td><%= crossing.codeCrossing %></td>
+            <td><%= link_to crossing.codeCrossing ,crossing %></td>
             <td><%= crossing.numCrossing %></td>
             <td><%= crossing.year %></td>
             <td><%= crossing.week %></td>
@@ -32,9 +39,15 @@
             <td><%= crossing.father %></td>
             <td><%= crossing.mother %></td>
             <td><%= crossing.dateHarvest %></td>
-            <td><%= link_to 'Show', crossing %></td>
-            <td><%= link_to 'Edit', edit_crossing_path(crossing) %></td>
-            <td><%= link_to 'Destroy', crossing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <!--            <td>< link_to 'Show', crossing %></td>-->
+            <td><%= link_to edit_crossing_path(crossing) do%>
+                <span class="glyphicon glyphicon-edit" data-toggle="tooltip" title="editar"></span>
+                <% end %>
+            </td>
+            <td><%= link_to crossing, method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <span class="glyphicon glyphicon-remove-sign" data-toggle="tooltip" title="eliminar"></span>
+                <% end %>
+            </td>
         </tr>
         <% end %>
     </tbody>
@@ -42,4 +55,4 @@
 
 <br>
 
-<%= link_to 'New Crossing', new_crossing_path %>
+

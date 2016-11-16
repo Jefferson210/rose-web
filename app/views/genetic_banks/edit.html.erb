@@ -2,5 +2,15 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @genetic_bank %> |
-<%= link_to 'Back', genetic_banks_path %>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <%= link_to @genetic_bank do%>
+            <span class="glyphicon glyphicon-eye-open" title="ver" ></span>
+            <% end %>
+            <%= link_to genetic_banks_path do%>
+            <span class="glyphicon glyphicon-arrow-left no-hover" title="atras"></span>
+            <% end %>
+        </div>
+    </div>
+</div>
