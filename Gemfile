@@ -72,7 +72,7 @@ gem "paperclip", "~> 5.0.0" #gema para la subida de imagenes
 gem 'bootstrap-sass', '~> 3.2.0' #bootstrap para rails
 
 #uso de la gema Devise para autenticacion de usuarios
-gem 'devise'
+gem 'devise', '~> 4.0.0'
 
 #uso de la gema cancan para autorizacion y asignacion de roles
 gem 'cancan'
