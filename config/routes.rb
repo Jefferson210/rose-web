@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
     get '/welcome' => 'example#index'
 
-<<<<<<< HEAD
+
     get 'children/index'
     get 'sowings/index'
     get 'crossings/index'
@@ -26,19 +26,17 @@ Rails.application.routes.draw do
     get 'genetic_banks/index'
 
 
-     
-=======
     devise_scope :user do
         get '/login' => 'devise/sessions#new'
         get '/logout' => 'devise/sessions#destroy'
     end
     resources :user, :controller => "user"
->>>>>>> 71e7d7a2bb2e2f8cabdd569c97b2e41b108eeab1
+
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
     # You can have the root of your site routed with "root"
-    # root 'welcome#index'
+    root 'example#index'
 
     # Example of regular route:
     #   get 'products/:id' => 'catalog#view'
