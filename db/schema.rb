@@ -33,8 +33,8 @@ ActiveRecord::Schema.define(version: 20161114222736) do
   add_index "children", ["crossing_id"], name: "index_children_on_crossing_id"
 
   create_table "colors", force: :cascade do |t|
-    t.string   "colorName",  limit: 255
-    t.string   "code",       limit: 255
+    t.string   "colorName"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,21 +57,21 @@ ActiveRecord::Schema.define(version: 20161114222736) do
   end
 
   create_table "genetic_banks", force: :cascade do |t|
-    t.string   "codeBreeder",          limit: 255
-    t.string   "breeder",              limit: 255
+    t.string   "codeBreeder"
+    t.string   "breeder"
     t.integer  "analysedYear"
-    t.string   "status",               limit: 255
-    t.string   "variety",              limit: 255
+    t.string   "status"
+    t.string   "variety"
     t.integer  "numPlants"
     t.boolean  "scent"
     t.decimal  "headSize"
     t.integer  "petals"
-    t.string   "steamLength",          limit: 255
+    t.string   "steamLength"
     t.decimal  "production"
     t.decimal  "opening"
     t.text     "flowerAbnormality"
-    t.string   "sheets",               limit: 255
-    t.string   "hawthorn",             limit: 255
+    t.string   "sheets"
+    t.string   "hawthorn"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "color_id"
