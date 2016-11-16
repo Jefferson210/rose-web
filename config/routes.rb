@@ -1,20 +1,28 @@
 Rails.application.routes.draw do
 
-  resources :children
+    #establecemos el controlador registrations personalizado para usarlo en Devise
+    devise_for :users
+    resources :children
 
-  resources :sowings
+    resources :sowings
 
     resources :crossings
-#    get "/crossings/hola/:father" => 'crossings#hola'
-#    match 'crossings/searchPicture/:father' => 'crossings#searchPicture', via: [:get, :post]
+    #    get "/crossings/hola/:father" => 'crossings#hola'
+    #    match 'crossings/searchPicture/:father' => 'crossings#searchPicture', via: [:get, :post]
 
     resources :colors
 
     resources :genetic_banks 
-#    get '/genetic_banks/:id/search' => 'genetic_banks#search'
-    
+    #    get '/genetic_banks/:id/search' => 'genetic_banks#search'
+
 
     get '/welcome' => 'example#index'
+
+    devise_scope :user do
+        get '/login' => 'devise/sessions#new'
+        get '/logout' => 'devise/sessions#destroy'
+    end
+    resources :user, :controller => "user"
     # The priority is based upon order of creation: first created -> highest priority.
     # See how all your routes lay out with "rake routes".
 
