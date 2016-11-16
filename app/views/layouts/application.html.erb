@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <head>
   <title>Rails4Example</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -37,6 +38,41 @@
   </div><!-- /.container-fluid -->
 </nav>
 <%= yield %>
+=======
+    <head>
+        <title>Rails4Example</title>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tags %>
+    </head>
+    <body>
+        <div class="container">
+            <% if notice %>
+            <h4 class="notice alert alert-success"><%= notice %></h4>
+            <% end %>
+            <% if alert %>
+            <h4 class="alert alert alert-info"><%= alert %></h4>
+            <% end %>
+            <% if flash[:info] %>
+            <h4 class="error"><%= flash[:info] %></h4>
+            <% end %>
 
-</body>
+            <div id="user_nav">
+                <% if user_signed_in? %>
+                <h4>Bienvenido <%= current_user.email %></h4>
+                <% if can? :manage, User %>
+                <%= link_to "Crear Usuario", new_user_path %>
+                <% end %>
+                <%= link_to "Mi Cuenta", edit_user_registration_path%>
+                <%= link_to "Cerrar Sesión", destroy_user_session_path%>
+                <%else%>
+                <%= link_to "Iniciar Sesión", new_user_session_path%>
+                <%end%>
+            </div>
+            <%= yield %>
+        </div>
+>>>>>>> 71e7d7a2bb2e2f8cabdd569c97b2e41b108eeab1
+
+
+    </body>
 </html>
